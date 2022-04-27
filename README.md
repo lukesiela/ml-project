@@ -6,3 +6,15 @@ The (large) dataset that I used for my project can be found here: https://www.ka
 ### Preprocessing
 To preprocess the data, run:
 >./preprocessor.py --data <raw_data_filepath> --cards <carddictionary_filepath> --output <newdata_filepath>
+
+I have also provided the preprocessed data for the top 100 patterns in the dataset.
+
+### Models
+To run any or all of the models with just a single train-test split, run:
+>./models.py --data <preprocessed_data_filepath> --models <rand, prob, knn, mlp, tree, svm, lr, and/or rf>
+
+To run any or all of the models with cross-validation EXCEPT Random Choice, Naive Choice, KNN, and SVM, run:
+>./models.py --data <preprocessed_data_filepath> --models <mlp, tree, lr, and/or rf> --cross
+
+To run either the Logistic Regression or Random Forest models with hyperparameter tuning, run:
+>./models.py --data <preprocessed_data_filepath> --models <lr or rf> --tune
